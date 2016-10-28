@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Animation</title>
+<style>
+  section {
+    margin: 75vh 0;
+  }
+  .sun {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+
+  <section>
+    <img class="sun" src="sun.png" alt="" />
+  </section>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+</script>
+<script>
+  var $sun = $('.sun');
+  var $win = $(window);
+
+  $win.on('scroll', function(){
+    var top = $win.scrollTop() / 3;
+    $sun.css('transform', 'rotate(' + top + 'deg)');
+  });
+</script>
+</body>
+</html>
